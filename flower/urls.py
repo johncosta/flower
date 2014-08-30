@@ -22,6 +22,7 @@ from .api import events
 from .api import control
 from .api import tasks
 from .api import workers
+from .api import queues
 
 from .views.update import (
     UpdateWorkers,
@@ -76,6 +77,8 @@ handlers = [
     (r"/api/task/events/task-failed/(.*)", events.TaskFailed),
     (r"/api/task/events/task-revoked/(.*)", events.TaskRevoked),
     (r"/api/task/events/task-retried/(.*)", events.TaskRetried),
+    # Queues WebSocket API
+    (r"/api/queues", queues.ListQueues),
     # WebSocket Updates
     (r"/update-workers", UpdateWorkers),
     # Monitors
