@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 from tornado import web
 
-from ..models import BrokersModel
+from ..models import BrokerModel
 from ..views import BaseHandler
 
 
@@ -51,4 +51,4 @@ List brokers
 :statuscode 401: unauthorized request
         """
         app = self.application
-        self.write(BrokersModel(app).queues)
+        self.write(BrokerModel(app).queues)
